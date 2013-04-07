@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8" />
@@ -8,9 +8,25 @@
                 font-family: dotum;
                 line-height: 1.6em;
             }
+            body.black {
+                background-color: black;
+                color: white;
+            }
+            body.black a {
+                color: white;
+            }
+            body.black a:hover {
+                color: #f60;
+            }
+            body.black header {
+                border-bottom: 1px solid #333;
+            }
+            body.black nav {
+                border-right: 1px solid #333;
+            }
             header {
-                border-bottom: 20px solid red;
-                padding: 20px 20;
+                border-bottom: 1px solid #ccc;
+                padding: 20px 0;
             }
             #toolbar {
                 padding: 10px;
@@ -18,17 +34,20 @@
             }
             nav {
                 float: left;
-                margin-right: 40px;
+                margin-right: 20px;
                 min-height: 500px;
-                border-right: 2px dashed red;
+                border-right: 1px solid #ccc;
             }
             nav ul {
                 list-style: none;
-                padding-left: 20;
-                padding-right: 30px;
+                padding-left: 0;
+                padding-right: 20px;
             }
             article {
                 float: left;
+            }
+            footer {
+                clear: both;
             }
             a {
                 text-decoration: none;
@@ -40,19 +59,19 @@
                 color: #f60;
             }
             h1 {
-                font-size: 1.4em;
+                font-size: 3.4em;
             }
         </style>
     </head>
  
-    <body>
+    <body id="body">
         <div>
             <header>
                 <h1>JavaScript</h1>
             </header>
             <div id="toolbar">
-                <input type="button" value="black" />
-                <input type="button" value="white" />
+                <input type="button" value="black" onclick="document.getElementById('body').className='black'" />
+                <input type="button" value="white" onclick="document.getElementById('body').className='white'" />
             </div>
             <nav>
                 <ul>
